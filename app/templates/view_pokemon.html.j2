@@ -1,0 +1,69 @@
+{% extends 'base.html.j2'%}
+{% block title %}
+    {% if current_user.is_authenticated %}
+        Edit Profile
+    {% else %}
+        Register
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h1>User's Pokedex:</h1>
+
+{% for poke in current_user.pokemon.all() %}
+
+{% if poke == current_user.pokemon.all()[0] %}
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image" style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+
+{% if poke == current_user.pokemon.all()[1] %}   
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image" style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+
+{% if poke == current_user.pokemon.all()[2] %}   
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image"style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+
+{% if poke == current_user.pokemon.all()[3] %}   
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image"style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+
+{% if poke == current_user.pokemon.all()[4] %}   
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image"style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+
+{% if poke == current_user.pokemon.all()[5] %}   
+
+  <div class="column">
+    <img src="{{poke.photo}}" alt="Pokemon Image"style="width:50">
+    <h5>{{ poke.name.title()}}</h5>
+  </div>
+{% endif %}
+</div>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

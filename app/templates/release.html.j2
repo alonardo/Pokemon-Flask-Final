@@ -1,0 +1,22 @@
+{% extends 'base.html.j2'%}
+{% block title %}
+    {% if current_user.is_authenticated %}
+        Edit Profile
+    {% else %}
+        Register
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h1>Release a Pokemon!</h1>
+<form action="/release" method="DELETE">
+  <div class="mb-1">
+    <label for="name" class="form-label">What Pokemon would you like to release?</label>
+    <input type="text" name = "name" class="form-control" id="name">
+  </div>
+  <button type="search" class="btn btn-primary">Release!</button>
+
+
+
+{% endblock %}
